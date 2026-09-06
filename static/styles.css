@@ -12,6 +12,21 @@
   --shadow: 0 30px 60px rgba(79, 70, 229, 0.12);
 }
 
+/* Dark theme variables applied when the root element has the .dark class */
+.dark {
+  --bg: #0b1020;
+  --panel: #0f1724;
+  --panel-soft: #0b1220;
+  --primary: #7c3aed;
+  --primary-dark: #5b21b6;
+  --text: #e6eef8;
+  --text-soft: #a9b6d6;
+  --line: rgba(255, 255, 255, 0.06);
+  --accent: #ffd166;
+  --success: #34d399;
+  --shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -94,6 +109,23 @@ button {
 .nav-actions {
   display: flex;
   gap: 12px;
+}
+
+/* Theme toggle button styling */
+#theme-toggle {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+#theme-toggle[aria-pressed="true"] {
+  background: linear-gradient(135deg, var(--primary), #6d5ef7);
+  color: white;
 }
 
 .primary-btn,
