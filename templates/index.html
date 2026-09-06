@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velora | Smart Living</title>
+    <meta name="description" content="Modern ecommerce landing page for everyday essentials and smart lifestyle products." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-mark">V</span>
+          <span>Velora</span>
+        </div>
+        <nav class="main-nav">
+          <a href="#new">New Arrivals</a>
+          <a href="#products">Shop</a>
+          <a href="#offers">Deals</a>
+          <a href="#reviews">Reviews</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="ghost-btn">Log in</button>
+          <button class="primary-btn">Cart (2)</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Fresh tech for modern living</p>
+            <h1>Upgrade your everyday with smarter essentials.</h1>
+            <p class="subtext">
+              Discover sleek gadgets, home upgrades, and must-have accessories designed to make life simpler and more stylish.
+            </p>
+            <div class="cta-row">
+              <a class="primary-btn large" href="#products">Shop Collection</a>
+              <a class="secondary-btn large" href="#offers">View offers</a>
+            </div>
+            <ul class="stats">
+              <li><strong>25k+</strong><span>happy customers</span></li>
+              <li><strong>4.9/5</strong><span>average rating</span></li>
+              <li><strong>48h</strong><span>fast shipping</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual">
+            <div class="product-card featured">
+              <div class="badge">Top pick</div>
+              <div class="visual-emoji">🎧</div>
+              <div class="card-meta">
+                <span>Nova Wireless</span>
+                <strong>$199</strong>
+              </div>
+            </div>
+            <div class="floating-note note-one">
+              <span>Free shipping</span>
+              <strong>on orders $75+</strong>
+            </div>
+            <div class="floating-note note-two">
+              <span>Limited time</span>
+              <strong>30% off</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="brands">
+        <div class="container brands-row">
+          <span>PixelTech</span>
+          <span>HomeNest</span>
+          <span>NovaCore</span>
+          <span>UrbanLab</span>
+          <span>Elevate</span>
+        </div>
+      </section>
+
+      <section id="offers" class="offers">
+        <div class="container section-heading">
+          <div>
+            <p class="eyebrow">Why shoppers choose us</p>
+            <h2>Everything you need, all in one place.</h2>
+          </div>
+        </div>
+        <div class="container offer-grid">
+          <article class="offer-box">
+            <span class="offer-icon">🚚</span>
+            <h3>Fast Delivery</h3>
+            <p>Free shipping on orders above $75 and next-day dispatch on best sellers.</p>
+          </article>
+          <article class="offer-box">
+            <span class="offer-icon">🛡️</span>
+            <h3>Secure Checkout</h3>
+            <p>Protected payments and hassle-free returns for complete peace of mind.</p>
+          </article>
+          <article class="offer-box">
+            <span class="offer-icon">💬</span>
+            <h3>Expert Support</h3>
+            <p>Our team is here to help you pick the perfect product for your lifestyle.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="products" class="products">
+        <div class="container section-heading split">
+          <div>
+            <p class="eyebrow">Featured products</p>
+            <h2>Curated picks for your everyday lifestyle.</h2>
+          </div>
+          <a href="#" class="text-link">Browse all products</a>
+        </div>
+
+        <div class="container product-grid">
+          {% for product in products %}
+          <article class="product-card">
+            <div class="product-top">
+              <span class="product-tag">{{ product.tag }}</span>
+              <button class="wishlist" aria-label="Add to wishlist">♡</button>
+            </div>
+            <div class="product-emoji">{{ product.emoji }}</div>
+            <h3>{{ product.name }}</h3>
+            <div class="product-bottom">
+              <strong>{{ product.price }}</strong>
+              <button class="primary-btn small">Add to cart</button>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="new" class="promo-banner">
+        <div class="container promo-inner">
+          <div>
+            <p class="eyebrow light">New season collection</p>
+            <h2>Build a smarter home for less.</h2>
+          </div>
+          <a class="secondary-btn large light" href="#">Explore deals</a>
+        </div>
+      </section>
+
+      <section id="reviews" class="reviews">
+        <div class="container section-heading">
+          <div>
+            <p class="eyebrow">Customer stories</p>
+            <h2>Loved by people who value quality.</h2>
+          </div>
+        </div>
+        <div class="container review-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“The setup was effortless and the quality feels premium. My home feels more organized in just one week.”</p>
+            <div class="reviewer">
+              <strong>Marina D.</strong>
+              <span>Verified buyer</span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Fast shipping, excellent support, and products that actually make my day easier. I’m ordering again.”</p>
+            <div class="reviewer">
+              <strong>Lucas P.</strong>
+              <span>Verified buyer</span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Beautiful design and surprisingly practical features. It feels like the future without the complexity.”</p>
+            <div class="reviewer">
+              <strong>Priya S.</strong>
+              <span>Verified buyer</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand footer-brand">
+            <span class="brand-mark">V</span>
+            <span>Velora</span>
+          </div>
+          <p>Premium essentials for modern living.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Support</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
